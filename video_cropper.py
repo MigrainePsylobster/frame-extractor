@@ -50,7 +50,7 @@ class VideoCropper:
         self.setup_gpu_info()
         
         # Dark mode
-        self.dark_mode = tk.BooleanVar(value=True)
+        self.dark_mode = tk.BooleanVar(value=False)
         self.setup_dark_mode()
         
         # Create GUI
