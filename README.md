@@ -32,6 +32,7 @@ A professional video frame extraction application optimized for NVIDIA RTX 5000 
 
 ## Features
 
+### Frame Extractor
 - **RTX 5000 Series Optimized** - Full 120 SM utilization for maximum performance
 - **Lossless PNG Output** - High-quality frame preservation
 - **GPU Acceleration** - CUDA-powered processing with automatic CPU fallback
@@ -39,6 +40,32 @@ A professional video frame extraction application optimized for NVIDIA RTX 5000 
 - **Flexible Extraction** - Custom intervals or complete frame extraction
 - **Real-time Progress** - Live progress tracking with GPU status
 - **Robust Error Handling** - Graceful fallbacks and user-friendly messages
+
+### 🆕 Video Cropper (New Feature!)
+- **Video Editing Interface** - Click and drag crop selection
+- **Real-time Preview** - Frame-by-frame navigation with timeline
+- **Lossless Export** - High-quality H.264/H.265 cropped video output
+- **Dark Mode Support** - Toggle between light and dark themes
+- **"framed_" Prefix** - Automatic output naming (e.g., framed_video.mp4)
+
+## Quick Start
+
+### Frame Extractor (Original)
+```bash
+# 1. Run setup (first time only)
+.\setup.bat
+
+# 2. Launch frame extractor
+.\run.bat
+```
+
+### Video Cropper (New Feature)
+```bash
+# 1. Same setup as above (shared environment)
+
+# 2. Launch video cropper
+.\run_cropper.bat
+```
 
 ## Supported Hardware
 
@@ -50,25 +77,10 @@ A professional video frame extraction application optimized for NVIDIA RTX 5000 
 - Any CUDA-compatible NVIDIA GPU
 - CPU-only processing (automatic fallback)
 
-## Quick Start
-
-### 1. Clone and Setup
-```bash
-git clone https://github.com/yourusername/frame-extractor.git
-cd frame-extractor
-.\setup.bat
-```
-
-
-### 2. Launch Application
-```bash
-.\run.bat
-```
-
 ## Requirements
 
 - **Python 3.10+**
-- **NVIDIA GPU** with CUDA support (optional, CPU fallback available)
+- **NVIDIA GPU** with CUDA support (optional, CPU fallback available)  
 - **Windows 10/11** (primary support)
 
 ## �️ Installation
@@ -78,8 +90,11 @@ cd frame-extractor
 # 1. Run setup script
 .\setup.bat
 
-# 2. Launch application
+# 2a. Launch frame extractor (original)
 .\run.bat
+
+# 2b. Launch video cropper (new feature)
+.\run_cropper.bat
 ```
 
 ### Manual Setup
@@ -91,8 +106,11 @@ python -m venv venv
 # 2. Install dependencies
 pip install -r requirements.txt
 
-# 3. Run application
+# 3a. Run frame extractor
 python main.py
+
+# 3b. Run video cropper
+python video_cropper.py
 ```
 
 ## � Usage
@@ -117,19 +135,23 @@ python main.py
 
 ```
 frame-extractor/
-├── 📄 main.py              # Main GUI application
-├── 🔧 setup.bat            # Virtual environment setup
-├── 🚀 run.bat              # Application launcher  
+├── 📄 main.py              # Main GUI application (frame extractor)
+├── � video_cropper.py     # Video cropper application (NEW!)
+├── �🔧 setup.bat            # Virtual environment setup
+├── 🚀 run.bat              # Frame extractor launcher  
+├── 🚀 run_cropper.bat      # Video cropper launcher (NEW!)
 ├── 🧪 test_gpu.py          # GPU compatibility test
 ├── 🧪 test_gpu.bat         # GPU test launcher
 ├── 📋 requirements.txt     # Python dependencies
 ├── 📚 README.md            # This file
+├── 📚 VIDEO_CROPPER_README.md  # Video cropper documentation (NEW!)
 ├── � pytorch_setup.md     # PyTorch setup guide
 ├── � CONTRIBUTING.md      # Contribution guidelines
 ├── 📄 LICENSE              # MIT License
 ├── 🚫 .gitignore           # Git ignore file
 └── 📁 Extraction/          # Output folder (created automatically)
-    └── [video_name]/       # Individual video folders
+    ├── [video_name]/       # Individual video folders (frames)
+    └── framed_*.mp4        # Cropped video files (NEW!)
 ```
 
 ## ⚡ Performance
